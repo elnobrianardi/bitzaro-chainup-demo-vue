@@ -26,7 +26,7 @@ export default {
   align-items: center;
   justify-content: center;
   gap: 32px;
-  padding: 72px 24px;
+  padding-block: 72px;
   background: radial-gradient(
     64.78% 100% at 50% 100%,
     #a464f9 0%,
@@ -36,17 +36,7 @@ export default {
   text-align: center;
 }
 
-@media (min-width: 640px) {
-  .trading-experience {
-    padding: 72px 48px;
-  }
-}
 
-@media (min-width: 768px) {
-  .trading-experience {
-    padding: 72px 80px;
-  }
-}
 
 .text-content h2 {
   font-weight: 700;
@@ -106,6 +96,7 @@ export default {
   cursor: pointer;
   transition: background-color 0.2s;
   text-align: center;
+  border: none;
 }
 
 @media (min-width: 640px) {

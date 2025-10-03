@@ -46,9 +46,11 @@ export default {
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   align-items: center;
   gap: 16px;
-  padding: 24px 16px;
+  padding: 16px;
   border-radius: 16px;
   overflow: visible;
   background: linear-gradient(

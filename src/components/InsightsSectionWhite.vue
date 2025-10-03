@@ -121,6 +121,7 @@ export default {
   font-size: 14px;
   cursor: pointer;
   transition: opacity 0.2s;
+  border: none;
 }
 
 .download-btn:hover {

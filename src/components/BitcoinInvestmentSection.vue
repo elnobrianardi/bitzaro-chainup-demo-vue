@@ -203,21 +203,20 @@ export default {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   gap: 20px;
-  text-align: center;
 }
 
 @media (min-width: 1024px) {
   .right-content {
-    text-align: left;
-    align-items: flex-start;
+    text-align: center;
+    align-items: center;
   }
 }
 
 .result-text {
   font-size: 18px;
+  text-align: center;
   color: #000;
 }
 

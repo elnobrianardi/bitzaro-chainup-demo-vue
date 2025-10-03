@@ -143,7 +143,6 @@ export default {
 /* Left group */
 .left-group {
   display: flex;
-  align-items: center;
   gap: 24px;
 }
 
@@ -156,6 +155,8 @@ export default {
 .nav-desktop {
   display: flex;
   gap: 24px;
+  align-items: center;
+  margin-top: 6px;
 }
 .nav-link {
   font-weight: 600;
@@ -163,6 +164,15 @@ export default {
   transition: color 0.3s;
   text-decoration: none;
 }
+
+.nav-link.text-white {
+  color: white;
+}
+
+.nav-link.text-black {
+  color: black;
+}
+
 .nav-link:hover {
   color: #7815f9;
 }

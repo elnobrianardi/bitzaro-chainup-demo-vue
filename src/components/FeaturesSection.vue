@@ -52,6 +52,7 @@ export default {
   width: 100%;
   max-width: 100%;
   align-items: center;
+  box-sizing: border-box;
   gap: 16px;
   padding: 16px;
   border-radius: 16px;
@@ -122,7 +123,7 @@ export default {
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 200px;
+  max-width: 180px;
   height: 128px;
   overflow: hidden;
   border-radius: 12px;
@@ -130,7 +131,7 @@ export default {
 }
 @media (min-width: 640px) {
   .image-container {
-    width: 198px;
+    width: 180px;
     height: 160px;
     max-width: none;
     justify-content: flex-start;

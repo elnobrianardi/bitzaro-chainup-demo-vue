@@ -9,7 +9,9 @@
 
     <!-- One App Heading -->
     <section class="one-app">
-      <h2>One App, Endless Possibilities</h2>
+      <div class="one-app-content">
+        <h2>One App, Endless Possibilities</h2>
+      </div>
     </section>
 
     <!-- Trading Experience -->
@@ -20,17 +22,19 @@
       </div>
 
       <div class="columns">
-        <div>
+        <div class="column-1">
           <FeaturesSection />
           <AppOverviewSection />
         </div>
-        <ComponentNodeSection />
+        <div class="column-2">
+          <ComponentNodeSection />
+        </div>
       </div>
     </section>
 
     <!-- Ultimate Web Trading -->
     <section class="ultimate">
-      <h2>The Ultimate Web Trading Experience</h2>
+      <h2>The Ultimate <br> Web Trading Experience</h2>
       <p>Enjoy Bitzaro right from your desktop</p>
       <div class="launch-desktop">
         <button>Launch on Desktop</button>
@@ -45,10 +49,12 @@
 
     <!-- Bitcoin Investment -->
     <section class="investment">
-      <h2>
-        If you'd invested in <span class="underline">Bitcoin</span>
-      </h2>
-      <img :src="downArrow" alt="Arrow" />
+      <div class="investment-header">
+        <h2>
+          If you'd invested in <span>Bitcoin</span>
+        </h2>
+        <img :src="downArrow" alt="Arrow" />
+      </div>
       <BitcoinInvestmentSection />
     </section>
 
@@ -63,7 +69,15 @@
     <section class="insights">
       <h2>Crypto Latest Insights</h2>
       <CryptoInsightsSection />
+    </section>
+
+    <!-- Trading Experience -->
+    <section class="trading-experience">
       <TradingExperienceSection />
+    </section>
+
+    <!-- Footer -->
+    <section class="footer">
       <InsightsSection />
     </section>
   </div>
@@ -120,6 +134,8 @@ export default {
   background: white;
   color: black;
   font-family: sans-serif;
+  align-items: center;
+  justify-items: center;
 }
 
 .hero {
@@ -127,11 +143,28 @@ export default {
   justify-content: center;
   align-items: center;
   padding: 40px 0;
+  width: 100%;
+  z-index: 0;
 }
 
 .one-app {
   text-align: center;
   padding: 40px 0;
+  width: 100%;
+  position: relative;
+  z-index: 30;
+}
+
+.one-app-content {
+  position: absolute;
+  z-index: 50;
+  border-top-right-radius: 32px;
+  border-top-left-radius: 32px;
+  top: -72px;
+  background: white;
+  padding-top: 64px;
+  padding-bottom: 48px;
+  width: 100%;
 }
 
 .one-app h2 {
@@ -146,21 +179,74 @@ export default {
 }
 
 .columns {
-  display: flex;
+  display: block;
   gap: 20px;
   margin-bottom: 40px;
 }
+
+@media (min-width: 768px) {
+  .columns {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .column-1,
+  .column-2 {
+    flex: 1;
+    max-width: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .column-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .column-2 {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+
+
+
+
 
 .ultimate {
   text-align: center;
   padding: 60px 20px;
   background: #f6f5f7;
+  width: 100%;
+}
+
+.ultimate h2 {
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 110%;
+}
+
+.ultimate p {
+  font-size: 24px;
+  font-weight: 500;
+  color: #1C1C1C
 }
 
 .launch-desktop {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.ultimate button {
+  padding-inline: 56px;
+  padding-block: 12px;
+  background-color: #7815F9;
+  color: white;
+  border-radius: 6px;
+  border: none;
 }
 
 .ultimate img {
@@ -173,26 +259,66 @@ export default {
 .community {
   background: #f6f5f7;
   padding: 40px 0;
+  width: 100%;
 }
 
 .investment {
   padding: 40px;
-  text-align: center;
+  text-align: left;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.investment-header {
+  display: flex;
+  align-items: flex-end;
 }
 
 .investment h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 48px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.investment span {
+  text-decoration: underline;
+}
+
+.investment img {
+  width: 24px;
+  height: 16px;
+  margin-bottom: 40px;
+  margin-left: 8px;
 }
 
 .safety {
   padding: 60px 20px;
   background: white;
-  text-align: center;
+  text-align: left;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.safety h2 {
+  font-size: 48px;
+  line-height: 1;
+  font-weight: 900;
 }
 
 .insights {
   padding: 60px 20px;
   background: #fafafa;
+  width: 100%;
+  max-width: 1200px;
+  text-align: left;
+}
+
+.trading-experience {
+  width: 100%;
+}
+
+.footer {
+  width: 100%;
+  max-width: 1200px;
 }
 </style>
