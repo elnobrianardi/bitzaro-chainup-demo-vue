@@ -1,11 +1,11 @@
 <template>
-  <div class="spot-page">
-    <navigation-section />
+  <div class="favourite-page">
+    <NavigationSection />
 
-    <div class="main-content">
-      <!-- Chart Grid -->
+    <div class="content">
+      <!-- Chart grid -->
       <section class="chart-grid">
-        <line-chart-card
+        <LineChartCard
           v-for="item in lineChartMockData"
           :key="item.id"
           v-bind="item"
@@ -13,19 +13,18 @@
       </section>
 
       <!-- Search + Filter + Table -->
-      <section class="content-section">
-        <div class="search-container">
-          <search-bar />
+      <section class="table-section">
+        <div class="search-wrapper">
+          <SearchBar />
         </div>
 
-        <div class="filter-buttons">
-          <div class="filter-btn">All Market</div>
-          <div class="filter-btn">USDT</div>
-          <div class="filter-btn">BTC</div>
+        <div class="filter-container">
+          <div class="filter-item">Spot</div>
+          <div class="filter-item">Future</div>
         </div>
 
-        <spot-table />
-        <insights-section-dark />
+        <FavouriteTable />
+        <InsightsSectionDark />
       </section>
     </div>
   </div>
@@ -37,16 +36,16 @@ import LineChartCard from "../components/LineChartCard.vue";
 import { lineChartMockData } from "../data/lineChartData";
 import InsightsSectionDark from "../components/InsightsSectionDark.vue";
 import SearchBar from "../components/SearchBar.vue";
-import SpotTable from "../components/SpotTable.vue";
+import FavouriteTable from "../components/FavouriteTable.vue";
 
 export default {
-  name: "SpotPage",
+  name: "FavouritePage",
   components: {
     NavigationSection,
     LineChartCard,
     InsightsSectionDark,
     SearchBar,
-    SpotTable,
+    FavouriteTable,
   },
   data() {
     return {
@@ -57,7 +56,7 @@ export default {
 </script>
 
 <style scoped>
-.spot-page {
+.favourite-page {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -67,15 +66,15 @@ export default {
   -webkit-backdrop-filter: blur(5px) brightness(100%);
 }
 
-.main-content {
+.content {
   flex-grow: 1;
 }
 
-/* Chart Grid */
+/* Chart grid section */
 .chart-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 16px;
+  gap: 16px;
   padding: 16px;
   padding-top: 120px;
   width: 100%;
@@ -95,18 +94,19 @@ export default {
   }
 }
 
-/* Search and Filter Section */
-.content-section {
+/* Table and search section */
+.table-section {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
 }
 
-.search-container {
+.search-wrapper {
   padding-top: 16px;
 }
 
-.filter-buttons {
+/* Filter buttons */
+.filter-container {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -115,16 +115,10 @@ export default {
   padding-bottom: 32px;
 }
 
-.filter-btn {
-  background-color: #444;
+.filter-item {
+  background-color: #3f3f46;
   border-radius: 6px;
   padding: 4px 12px;
   font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.filter-btn:hover {
-  background-color: #555;
 }
 </style>

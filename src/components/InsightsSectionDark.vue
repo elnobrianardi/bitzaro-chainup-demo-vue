@@ -78,7 +78,7 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  background-color: #000;
+  background-color: transparent;
   color: #f5f7fa;
 }
 
