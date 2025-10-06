@@ -132,13 +132,14 @@ export default {
 }
 
 .academy header h2 {
-  font-size: 20px;
+  font-size: 24px;
   margin-bottom: 8px;
+  font-weight: 500;
 }
 
 .academy header p {
   color: #323232;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .academy-articles {
@@ -171,12 +172,13 @@ export default {
   padding: 8px;
   font-weight: 500;
   color: #1b1b1b;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 22.5px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Academy footer */

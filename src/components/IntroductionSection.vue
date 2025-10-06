@@ -82,7 +82,7 @@ export default {
 .intro-section {
   position: relative;
   width: 100%;
-  min-height: 110vh;
+  min-height: 100vh;
   padding-top: 60px;
   background: #16121f;
   overflow: hidden;

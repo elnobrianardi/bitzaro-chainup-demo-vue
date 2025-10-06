@@ -11,8 +11,8 @@ export default {
 </script>
 
 <style>
-body {
+* {
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 </style>

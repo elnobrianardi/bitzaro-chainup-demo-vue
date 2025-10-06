@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Landing from '../views/Landing.vue'
+import Market from '@/views/Market.vue'
+import Spot from '@/views/Spot.vue'
 
 Vue.use(Router)
 
@@ -11,6 +13,16 @@ export default new Router({
       path: '/',
       name: 'landing',
       component: Landing
+    },
+    {
+      path: '/market',
+      name: 'market',
+      component: Market
+    },
+    {
+      path: '/spot',
+      name: 'spot',
+      component: Spot
     }
   ]
 })

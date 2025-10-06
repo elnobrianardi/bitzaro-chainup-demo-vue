@@ -144,6 +144,7 @@ export default {
   align-items: center;
   padding: 40px 0;
   width: 100%;
+  height: 100%;
   z-index: 0;
 }
 
@@ -174,8 +175,7 @@ export default {
 
 .trading {
   max-width: 1200px;
-  margin: auto;
-  padding: 40px;
+  width: 100%;
 }
 
 .columns {
@@ -217,7 +217,7 @@ export default {
 
 .ultimate {
   text-align: center;
-  padding: 60px 20px;
+  padding: 60px 0;
   background: #f6f5f7;
   width: 100%;
 }
@@ -263,7 +263,7 @@ export default {
 }
 
 .investment {
-  padding: 40px;
+  padding: 60px 0;
   text-align: left;
   max-width: 1200px;
   width: 100%;
@@ -292,7 +292,7 @@ export default {
 }
 
 .safety {
-  padding: 60px 20px;
+  padding: 60px 0;
   background: white;
   text-align: left;
   max-width: 1200px;
@@ -311,6 +311,12 @@ export default {
   width: 100%;
   max-width: 1200px;
   text-align: left;
+}
+
+.insights h2 {
+  font-size: 48px;
+  line-height: 1;
+  font-weight: 900;
 }
 
 .trading-experience {
