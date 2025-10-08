@@ -17,7 +17,6 @@
         </div>
       </div>
 
-      <!-- Copy kedua -->
       <div class="row-content">
         <div
           v-for="(coin, i) in spotTableData"
@@ -78,7 +77,7 @@ export default {
     return {
       spotTableData,
       rowWidth: 0,
-      speed: 40, // px per detik
+      speed: 40,
     };
   },
   computed: {
@@ -91,7 +90,19 @@ export default {
       if (this.$refs.rowRef) {
         this.rowWidth = this.$refs.rowRef.scrollWidth;
       }
+      // resize handler biar responsive
+      window.addEventListener("resize", this.handleResize);
     });
+  },
+  beforeUnmount() {
+    window.removeEventListener("resize", this.handleResize);
+  },
+  methods: {
+    handleResize() {
+      if (this.$refs.rowRef) {
+        this.rowWidth = this.$refs.rowRef.scrollWidth;
+      }
+    },
   },
 };
 </script>
@@ -132,8 +143,10 @@ export default {
   gap: 20px;
   background: white;
   border-radius: 8px;
+  box-sizing: border-box;
 }
 
+/* Responsive icon & text */
 .crypto-icon {
   width: 28px;
   height: 28px;
@@ -144,6 +157,7 @@ export default {
   display: flex;
   gap: 20px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .coin {
@@ -170,7 +184,6 @@ export default {
   font-size: 12px;
 }
 
-/* keyframes global */
 @keyframes marquee {
   0% {
     transform: translateX(0);
@@ -186,6 +199,55 @@ export default {
   }
   100% {
     transform: translateX(0);
+  }
+}
+
+/* ✅ RESPONSIVE */
+@media (max-width: 768px) {
+  .crypto-card {
+    gap: 12px;
+    padding: 8px;
+  }
+
+  .crypto-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .crypto-info {
+    gap: 10px;
+  }
+
+  .coin,
+  .price {
+    font-size: 12px;
+  }
+
+  .text-green-500,
+  .text-red-500 {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .crypto-card {
+    gap: 8px;
+    padding: 6px;
+  }
+
+  .crypto-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .coin,
+  .price {
+    font-size: 11px;
+  }
+
+  .text-green-500,
+  .text-red-500 {
+    font-size: 9px;
   }
 }
 </style>

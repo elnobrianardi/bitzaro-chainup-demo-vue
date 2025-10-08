@@ -137,6 +137,7 @@ export default {
   font-family: sans-serif;
   align-items: center;
   justify-items: center;
+  width: 100%;
 }
 
 .hero {
@@ -170,7 +171,7 @@ export default {
 }
 
 .one-app h2 {
-  font-size: 48px;
+  font-size: 32px;
   font-weight: bold;
 }
 
@@ -186,6 +187,10 @@ export default {
 }
 
 @media (min-width: 768px) {
+  .one-app-content h2{
+    font-size: 48px;
+  }
+
   .columns {
     display: flex;
     gap: 20px;
@@ -256,11 +261,15 @@ export default {
 }
 
 .ultimate img {
+  width: 90%;
   max-width: 800px;
-  width: 100%;
-  margin: 40px 72px 0;
+  height: auto;
+  margin: 40px auto 0;
   border-radius: 8px;
+  display: block;
+  object-fit: contain;
 }
+
 
 .community {
   background: #f6f5f7;
@@ -321,7 +330,7 @@ export default {
 }
 
 .insights {
-  padding: 60px 20px;
+  padding-top: 60px;
   background: #fafafa;
   width: 100%;
   max-width: 1200px;

@@ -128,7 +128,7 @@ export default {
   gap: 24px;
   background: #fff;
   border-radius: 12px;
-  padding: 24px;
+  padding-block: 24px;
 }
 
 .academy header h2 {

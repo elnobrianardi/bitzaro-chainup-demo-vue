@@ -52,7 +52,7 @@
                 background: 'linear-gradient(to top, #121126 15%, transparent 85%)',
                 opacity: 0.9,
                 transform: 'translateY(1px) scale(1.01)',
-                filter: 'blur(2px)'
+                filter: 'blur(2px)',
               }"
             ></div>
           </div>
@@ -69,26 +69,24 @@ import phoneMockUp from "../assets/Phone_MockUp/PhoneMockUp.png";
 export default {
   name: "IntroductionSection",
   data() {
-    return {
-      heroSection,
-      phoneMockUp,
-    };
+    return { heroSection, phoneMockUp };
   },
 };
 </script>
 
 <style scoped>
-/* Section container */
+/* SECTION */
 .intro-section {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 110vh;
   padding-top: 60px;
   background: #16121f;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
-/* Background image */
+/* BACKGROUND IMAGE */
 .intro-bg {
   position: absolute;
   inset: 0;
@@ -98,26 +96,29 @@ export default {
   max-width: 1920px;
   max-height: 900px;
   object-fit: contain;
+  object-position: center;
+  z-index: 0;
+  pointer-events: none;
 }
 
-/* Gradient overlay */
+/* GRADIENT OVERLAY */
 .intro-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(18, 17, 38, 0) 34.38%, #121126 85.78%);
+  background: linear-gradient(180deg, rgba(18,17,38,0) 34.38%, #121126 85.78%);
 }
 
-/* Inner wrapper */
+/* CONTAINER */
 .intro-container {
   position: relative;
   z-index: 10;
-  width: 100%;
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 16px;
 }
 
-/* Content layout */
+/* FLEX LAYOUT */
 .intro-content {
   display: flex;
   flex-direction: column-reverse;
@@ -126,14 +127,13 @@ export default {
   padding: 32px 0;
   gap: 40px;
 }
-
 @media (min-width: 768px) {
   .intro-content {
     flex-direction: row;
   }
 }
 
-/* Text */
+/* TEXT */
 .intro-text {
   flex: 1;
   color: white;
@@ -169,8 +169,8 @@ export default {
 .intro-text p {
   margin-top: 16px;
   font-size: 16px;
-  line-height: 1.6;
   color: #e1e1e1;
+  line-height: 1.6;
 }
 @media (min-width: 768px) {
   .intro-text p {
@@ -183,7 +183,7 @@ export default {
   }
 }
 
-/* CTA button */
+/* BUTTON */
 .btn-trade {
   margin-top: 44px;
   padding: 10px 20px;
@@ -205,7 +205,7 @@ export default {
   outline-offset: 2px;
 }
 
-/* Phone mockup */
+/* PHONE */
 .intro-phone {
   flex: 1;
   display: flex;
@@ -246,7 +246,7 @@ export default {
   pointer-events: none;
 }
 
-/* Utility */
+/* UTILITY */
 .break {
   display: block;
 }
@@ -256,6 +256,40 @@ export default {
 @media (min-width: 640px) {
   .hidden-sm {
     display: inline;
+  }
+}
+
+/* RESPONSIVE FIXES */
+@media (max-width: 480px) {
+  .intro-text h1 {
+    font-size: 26px;
+  }
+  .intro-text p {
+    font-size: 14px;
+  }
+  .btn-trade {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+  .intro-content {
+    gap: 24px;
+    padding: 24px 0;
+  }
+  .phone-wrapper {
+    width: 220px;
+  }
+}
+
+/* LARGE SCREEN BALANCE */
+@media (min-width: 1440px) {
+  .intro-container {
+    max-width: 1320px;
+  }
+  .intro-text h1 {
+    font-size: 70px;
+  }
+  .intro-text p {
+    font-size: 22px;
   }
 }
 </style>

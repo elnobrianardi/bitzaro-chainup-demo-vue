@@ -1,25 +1,21 @@
 <template>
   <section class="main-content">
-    <!-- Arrow button at top right -->
-    <button
-      class="arrow-btn"
-      aria-label="Learn more about advanced trading"
-    >
-      <img :src="arrow" class="icon" alt="" />
+    <!-- Arrow button -->
+    <button class="arrow-btn" aria-label="Learn more about advanced trading">
+      <img :src="arrow" class="icon" alt="Arrow icon" />
     </button>
 
-    <!-- Text content -->
+    <!-- Text -->
     <div class="text-content">
       <h3 class="subtitle">❘ Advanced Trading</h3>
-
       <h2 class="title">
-        Step up with advanced 
-        <span class="nowrap">spot trading </span><br />
+        Step up with advanced
+        <span class="nowrap">spot trading</span><br />
         and 25x leverage on Future
       </h2>
     </div>
 
-    <!-- Image below the h2 -->
+    <!-- Image -->
     <div class="image-wrapper">
       <img
         class="spot-image"
@@ -36,60 +32,72 @@ import arrow from "../assets/Icon/Navigation_Icon_(Profile, Language, Arrow)/arr
 </script>
 
 <style scoped>
+/* Ensure no white overflow on small screens */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  overflow-x: hidden;
+}
+
 .main-content {
   position: relative;
   width: 100%;
-  min-height: 100%;
-  padding: 24px 16px 0;
-  background: rgba(162, 22, 255, 0.04); /* #a216ff0a */
-  border-radius: 16px;
-  overflow: visible;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
   justify-content: space-between;
+  padding: 24px 16px 0;
+  background: rgba(162, 22, 255, 0.04);
+  border-radius: 16px;
+  gap: 16px;
+  box-sizing: border-box;
 }
 
+/* Tablet adjustments */
 @media (min-width: 640px) {
   .main-content {
     padding: 32px 24px 0;
     gap: 24px;
   }
 }
+
+/* Desktop */
 @media (min-width: 768px) {
   .main-content {
     padding: 32px 32px 0;
   }
 }
 
-/* Button */
+/* Arrow Button */
 .arrow-btn {
   position: absolute;
   top: 16px;
   right: 16px;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
   padding: 8px;
   background: #fff;
   border-radius: 50%;
   border: none;
   cursor: pointer;
   transition: background 0.2s ease;
+  z-index: 10;
 }
 .arrow-btn:hover {
-  background: #f9f9f9;
+  background: #f1f1f1;
 }
 .arrow-btn:focus {
   outline: none;
-  box-shadow: 0 0 0 2px rgba(83, 25, 158, 0.5);
+  box-shadow: 0 0 0 2px rgba(83, 25, 158, 0.4);
 }
 
 @media (min-width: 640px) {
   .arrow-btn {
-    top: 32px;
-    right: 32px;
+    top: 24px;
+    right: 24px;
   }
 }
 
@@ -109,23 +117,27 @@ import arrow from "../assets/Icon/Navigation_Icon_(Profile, Language, Arrow)/arr
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px;
   width: 100%;
-  margin-bottom: 0;
+  gap: 8px;
 }
 @media (min-width: 640px) {
   .text-content {
     gap: 16px;
-    margin-bottom: 32px;
   }
 }
 
 .subtitle {
   font-weight: 500;
   color: #53199e;
-  font-size: 18px;
-  line-height: 25px;
+  font-size: 16px;
+  line-height: 24px;
   white-space: nowrap;
+}
+@media (min-width: 480px) {
+  .subtitle {
+    font-size: 18px;
+    line-height: 25px;
+  }
 }
 @media (min-width: 640px) {
   .subtitle {
@@ -136,18 +148,26 @@ import arrow from "../assets/Icon/Navigation_Icon_(Profile, Language, Arrow)/arr
 .title {
   font-weight: 500;
   color: #323232;
-  font-size: 20px;
-  line-height: 32px;
+  font-size: 18px;
+  line-height: 28px;
+  word-break: break-word;
 }
 @media (min-width: 480px) {
   .title {
-    font-size: 24px;
+    font-size: 22px;
+    line-height: 32px;
   }
 }
 @media (min-width: 640px) {
   .title {
-    font-size: 30px;
-    line-height: 40px;
+    font-size: 28px;
+    line-height: 38px;
+  }
+}
+@media (min-width: 1024px) {
+  .title {
+    font-size: 32px;
+    line-height: 42px;
   }
 }
 
@@ -159,13 +179,20 @@ import arrow from "../assets/Icon/Navigation_Icon_(Profile, Language, Arrow)/arr
 .image-wrapper {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
+  padding-bottom: 16px;
 }
 
 .spot-image {
   width: 100%;
-  max-width: 458px;
+  max-width: 460px;
   height: auto;
   object-fit: contain;
+}
+@media (min-width: 1024px) {
+  .spot-image {
+    max-width: 500px;
+  }
 }
 </style>

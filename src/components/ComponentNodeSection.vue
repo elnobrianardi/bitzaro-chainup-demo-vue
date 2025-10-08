@@ -1,14 +1,11 @@
 <template>
   <section class="component-node">
-    <!-- Button in top-right -->
-    <button
-      class="arrow-btn"
-      aria-label="Learn more about Bitzaro Earn"
-    >
+    <!-- Button -->
+    <button class="arrow-btn" aria-label="Learn more about Bitzaro Earn">
       <img class="icon" alt="" :src="arrow" />
     </button>
 
-    <!-- Text content -->
+    <!-- Text -->
     <div class="text-content">
       <h2 class="title">
         <span class="gray">
@@ -21,13 +18,9 @@
       </h2>
     </div>
 
-    <!-- Image below text -->
+    <!-- Image -->
     <div class="image-wrapper">
-      <img
-        class="bit-earn-img"
-        alt="Bitzaro Earn promotional graphic"
-        :src="bitEarn"
-      />
+      <img class="bit-earn-img" alt="Bitzaro Earn promotional graphic" :src="bitEarn" />
     </div>
   </section>
 </template>
@@ -39,19 +32,14 @@ import bitEarn from "../assets/Add-On/bit-earn.png";
 export default {
   name: "ComponentNodeSection",
   data() {
-    return {
-      arrow,
-      bitEarn
-    };
-  }
+    return { arrow, bitEarn };
+  },
 };
 </script>
 
 <style scoped>
 .component-node {
   position: relative;
-  width: 100%;
-  height: auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -62,13 +50,19 @@ export default {
       rgba(14, 119, 255, 0.08) 0%,
       rgba(14, 119, 255, 0.08) 100%
     ),
-    linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    #fff;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
-@media (min-width: 640px) {
-  .component-node {
-    height: 352px;
-  }
+/* Fix white overflow issue */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  overflow-x: hidden;
 }
 
 /* Button */
@@ -79,75 +73,32 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 4px;
   background: #fff;
   border-radius: 50%;
   border: none;
   cursor: pointer;
   transition: background 0.2s ease;
+  padding: 6px;
   z-index: 10;
 }
 .arrow-btn:hover {
-  background: #f9f9f9;
+  background: #f1f1f1;
 }
-.arrow-btn:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #1761f5;
-}
-
-@media (min-width: 640px) {
-  .arrow-btn {
-    top: 16px;
-    right: 16px;
-  }
-}
-
 .icon {
   width: 20px;
   height: 20px;
 }
-@media (min-width: 640px) {
-  .icon {
-    width: 24px;
-    height: 24px;
-  }
-}
 
-/* Text content */
+/* Text */
 .text-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
   padding: 24px;
   width: 100%;
-  z-index: 10;
 }
-@media (min-width: 640px) {
-  .text-content {
-    padding: 32px;
-  }
-}
-
 .title {
-  font-size: 20px;
-  line-height: 32px;
+  font-size: 18px;
+  line-height: 28px;
   font-weight: 500;
   color: #323232;
-  letter-spacing: 0;
-}
-@media (min-width: 480px) {
-  .title {
-    font-size: 24px;
-    line-height: 36px;
-  }
-}
-@media (min-width: 640px) {
-  .title {
-    font-size: 30px;
-    line-height: 40px;
-  }
 }
 .gray {
   color: #323232;
@@ -159,26 +110,58 @@ export default {
 .big-blue {
   color: #1761f5;
   font-weight: 700;
-  font-size: 40px;
-  line-height: 52px;
+  font-size: 36px;
+  line-height: 48px;
 }
 
-/* Image wrapper */
+/* Image */
 .image-wrapper {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: flex-end;
   margin-top: auto;
-  height: 200px;
-}
-@media (min-width: 640px) {
-  .image-wrapper {
-    height: 220px;
-  }
+  padding: 0 16px 16px;
 }
 .bit-earn-img {
-  max-height: 100%;
-  width: auto;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
   object-fit: contain;
+}
+
+/* Responsive adjustments */
+@media (min-width: 480px) {
+  .title {
+    font-size: 22px;
+    line-height: 32px;
+  }
+  .big-blue {
+    font-size: 40px;
+    line-height: 52px;
+  }
+}
+
+@media (min-width: 640px) {
+  .component-node {
+    height: 352px;
+  }
+  .text-content {
+    padding: 32px;
+  }
+  .title {
+    font-size: 28px;
+    line-height: 40px;
+  }
+  .big-blue {
+    font-size: 44px;
+    line-height: 56px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bit-earn-img {
+    max-width: 480px;
+  }
 }
 </style>
