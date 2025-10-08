@@ -85,7 +85,7 @@ export default {
   gap: 32px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 24px;
+  padding: 40px;
   border-radius: 20px;
   border: 1px solid #dcdcdc;
 }
@@ -110,7 +110,8 @@ export default {
 }
 
 .amount-text {
-  font-size: 18px;
+  text-align: left;
+  font-size: 24px;
   color: #000;
 }
 
@@ -166,7 +167,7 @@ export default {
 }
 
 .year-label {
-  font-size: 18px;
+  font-size: 24px;
   color: #000;
 }
 
@@ -182,6 +183,7 @@ export default {
   border-radius: 50px;
   border: 1px solid #dcdcdc;
   background: transparent;
+  font-size: 16px;
   color: #2c2c2c;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -215,7 +217,7 @@ export default {
 }
 
 .result-text {
-  font-size: 18px;
+  font-size: 24px;
   text-align: center;
   color: #000;
 }
@@ -224,17 +226,16 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
 }
 
 .principal {
-  font-size: 32px;
+  font-size: 48px;
   font-weight: bold;
   color: #25ba7f;
 }
 
 .percent {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 600;
   color: #25ba7f;
 }

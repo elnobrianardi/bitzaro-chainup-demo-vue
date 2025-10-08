@@ -59,8 +59,8 @@ import successBuy1 from "../assets/GIF/5186020064e1c2d1d8a3432e146567abe8e7504a.
 
 .nav-button {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: 16px;
+  right: 16px;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -105,7 +105,7 @@ import successBuy1 from "../assets/GIF/5186020064e1c2d1d8a3432e146567abe8e7504a.
 .tag {
   font-weight: 500;
   color: #0b8c8c;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 25px;
   white-space: nowrap;
 }
@@ -113,7 +113,7 @@ import successBuy1 from "../assets/GIF/5186020064e1c2d1d8a3432e146567abe8e7504a.
 .title {
   font-weight: 500;
   color: #323232;
-  font-size: 20px;
+  font-size: 30px;
   line-height: 32px;
 }
 @media (min-width: 480px) {

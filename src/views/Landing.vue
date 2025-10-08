@@ -56,6 +56,7 @@
         <img :src="downArrow" alt="Arrow" />
       </div>
       <BitcoinInvestmentSection />
+      <p>Based on data from 1 March 2020 - 1 March 2024. Past performances do not guarantee the future.</p>
     </section>
 
     <!-- Safety -->
@@ -169,7 +170,7 @@ export default {
 }
 
 .one-app h2 {
-  font-size: 2rem;
+  font-size: 48px;
   font-weight: bold;
 }
 
@@ -188,7 +189,8 @@ export default {
   .columns {
     display: flex;
     gap: 20px;
-    align-items: flex-start;
+    align-items: stretch;
+    margin-top: 20px;
   }
 
   .column-1,
@@ -202,6 +204,7 @@ export default {
   .column-1 {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 20px;
   }
 
@@ -231,7 +234,8 @@ export default {
 .ultimate p {
   font-size: 24px;
   font-weight: 500;
-  color: #1C1C1C
+  color: #1C1C1C;
+  margin-top: 16px;
 }
 
 .launch-desktop {
@@ -244,15 +248,17 @@ export default {
   padding-inline: 56px;
   padding-block: 12px;
   background-color: #7815F9;
+  font-size: 16px;
   color: white;
   border-radius: 6px;
   border: none;
+  margin-top: 48px;
 }
 
 .ultimate img {
   max-width: 800px;
   width: 100%;
-  margin-top: 20px;
+  margin: 40px 72px 0;
   border-radius: 8px;
 }
 
@@ -272,6 +278,7 @@ export default {
 .investment-header {
   display: flex;
   align-items: flex-end;
+  margin-bottom: 48px;
 }
 
 .investment h2 {
@@ -287,8 +294,14 @@ export default {
 .investment img {
   width: 24px;
   height: 16px;
-  margin-bottom: 40px;
-  margin-left: 8px;
+  margin: 40px 0 0 8px;
+}
+
+.investment p{
+  text-align: center;
+  margin-top: 16px;
+  font-size: 14px;
+  color: gray;
 }
 
 .safety {
@@ -300,6 +313,8 @@ export default {
 }
 
 .safety h2 {
+  padding-bottom: 56px;
+  margin-top: 48px;
   font-size: 48px;
   line-height: 1;
   font-weight: 900;

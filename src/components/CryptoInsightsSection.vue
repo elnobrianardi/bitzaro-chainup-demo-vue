@@ -176,9 +176,11 @@ export default {
   line-height: 22.5px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  max-height: calc(18px * 2);
 }
 
 /* Academy footer */
@@ -213,13 +215,18 @@ export default {
   align-self: flex-start;
 }
 
+.news header{
+  margin-bottom: 2px;
+}
+
 .news header h2 {
-  font-size: 20px;
+  font-size: 24px;
+  margin-bottom: 8px;
 }
 
 .news header p {
   color: #323232;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .news-item {
@@ -241,7 +248,7 @@ export default {
   flex: 1;
   font-weight: 600;
   color: #1b1b1b;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.3;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -262,7 +269,7 @@ export default {
 .news footer a {
   color: #7815f9;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   white-space: nowrap;
 }
 

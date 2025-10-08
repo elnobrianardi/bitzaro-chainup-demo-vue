@@ -39,7 +39,7 @@ import arrow from "../assets/Icon/Navigation_Icon_(Profile, Language, Arrow)/arr
 .main-content {
   position: relative;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   padding: 24px 16px 0;
   background: rgba(162, 22, 255, 0.04); /* #a216ff0a */
   border-radius: 16px;
