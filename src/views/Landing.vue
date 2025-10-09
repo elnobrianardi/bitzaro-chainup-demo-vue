@@ -171,28 +171,43 @@ export default {
 }
 
 .one-app h2 {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: bold;
 }
 
+.column-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+@media (min-width:435px) {
+  .one-app h2 {
+    font-size: 32px;
+  }
+}
 .trading {
   max-width: 1200px;
   width: 100%;
 }
 
 .columns {
-  display: block;
+  display: flex;
+  flex-direction: column;
   gap: 20px;
   margin-bottom: 40px;
+  padding-inline: 20px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .one-app-content h2{
     font-size: 48px;
   }
 
   .columns {
     display: flex;
+    flex-direction: row;
     gap: 20px;
     align-items: stretch;
     margin-top: 20px;
@@ -206,12 +221,6 @@ export default {
     overflow: hidden;
   }
 
-  .column-1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 20px;
-  }
 
   .column-2 {
     display: flex;
@@ -231,16 +240,25 @@ export default {
 }
 
 .ultimate h2 {
-  font-size: 48px;
+  font-size: 36px;
   font-weight: 900;
   line-height: 110%;
 }
 
 .ultimate p {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 500;
   color: #1C1C1C;
   margin-top: 16px;
+}
+
+@media (min-width: 540px) {
+  .ultimate p {
+    font-size: 24px;
+  }
+  .ultimate h2 {
+    font-size: 48px;
+  }
 }
 
 .launch-desktop {
@@ -290,20 +308,47 @@ export default {
   margin-bottom: 48px;
 }
 
+
 .investment h2 {
-  font-size: 48px;
+  font-size: 24px;
   line-height: 1;
   font-weight: 900;
 }
 
-.investment span {
-  text-decoration: underline;
+.investment img {
+  width: 12px;
+  height: 8px;
+  margin: 40px 0 0 8px;
 }
 
-.investment img {
+
+
+@media (min-width: 450px) {
+  .investment h2{
+    font-size: 32px;
+  }
+  .investment img {
+    width: 18px;
+    height: 12px;
+    margin: 40px 0 0 8px;
+  }
+}
+
+@media (min-width: 768px) {
+  .investment h2 {
+    font-size: 48px;
+  }
+  .investment img {
   width: 24px;
   height: 16px;
   margin: 40px 0 0 8px;
+}
+}
+
+
+
+.investment span {
+  text-decoration: underline;
 }
 
 .investment p{
@@ -324,24 +369,45 @@ export default {
 .safety h2 {
   padding-bottom: 56px;
   margin-top: 48px;
-  font-size: 48px;
+  font-size: 32px;
   line-height: 1;
   font-weight: 900;
 }
 
+@media (min-width: 768px) {
+  .safety h2 {
+    font-size: 48px;
+  }
+}
+
 .insights {
   padding-top: 60px;
-  background: #fafafa;
   width: 100%;
   max-width: 1200px;
   text-align: left;
 }
 
 .insights h2 {
-  font-size: 48px;
+  font-size: 32px;
   line-height: 1;
   font-weight: 900;
 }
+
+@media (min-width: 768px) {
+  .insights h2 {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .investment,
+  .safety,
+  .insights {
+    padding-inline: 20px; 
+    box-sizing: border-box; 
+  }
+}
+
 
 .trading-experience {
   width: 100%;

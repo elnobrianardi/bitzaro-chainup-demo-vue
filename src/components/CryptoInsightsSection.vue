@@ -132,14 +132,14 @@ export default {
 }
 
 .academy header h2 {
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 8px;
   font-weight: 500;
 }
 
 .academy header p {
   color: #323232;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .academy-articles {
@@ -172,7 +172,7 @@ export default {
   padding: 8px;
   font-weight: 500;
   color: #1b1b1b;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 22.5px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -182,6 +182,7 @@ export default {
   text-overflow: ellipsis;
   max-height: calc(18px * 2);
 }
+
 
 /* Academy footer */
 .academy footer {
@@ -193,7 +194,7 @@ export default {
 .academy footer a {
   color: #7815f9;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   white-space: nowrap;
 }
 
@@ -220,13 +221,13 @@ export default {
 }
 
 .news header h2 {
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 8px;
 }
 
 .news header p {
   color: #323232;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .news-item {
@@ -246,9 +247,10 @@ export default {
 
 .news-title {
   flex: 1;
+  font-size: 14px;
   font-weight: 600;
   color: #1b1b1b;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.3;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -269,12 +271,39 @@ export default {
 .news footer a {
   color: #7815f9;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   white-space: nowrap;
 }
 
 .news footer img {
   width: 8px;
   height: 12px;
+}
+
+@media (min-width: 1200px) {
+  .academy-title {
+    font-size: 18px;
+  }
+  .academy header h2 {
+    font-size: 24px;
+  }
+  .academy header p {
+    font-size: 20px;
+  }
+  .academy footer a {
+    font-size: 16px;
+  }
+  .news header h2 {
+    font-size: 24px;
+  }
+  .news header p {
+    font-size: 20px;
+  }
+  .news-title {
+    font-size: 16px;
+  }
+  .news footer a{
+    font-size: 16px;
+  }
 }
 </style>

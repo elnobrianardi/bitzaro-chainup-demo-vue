@@ -62,16 +62,9 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import heroSection from "../assets/Hero_Section/Hero_Section.png";
 import phoneMockUp from "../assets/Phone_MockUp/PhoneMockUp.png";
-
-export default {
-  name: "IntroductionSection",
-  data() {
-    return { heroSection, phoneMockUp };
-  },
-};
 </script>
 
 <style scoped>
@@ -82,8 +75,8 @@ export default {
   min-height: 110vh;
   padding-top: 60px;
   background: #16121f;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
+  margin-inline: auto;
 }
 
 /* BACKGROUND IMAGE */
@@ -95,7 +88,7 @@ export default {
   height: 100%;
   max-width: 1920px;
   max-height: 900px;
-  object-fit: contain;
+  object-fit: contain; /* ✅ no cropping */
   object-position: center;
   z-index: 0;
   pointer-events: none;
@@ -123,6 +116,7 @@ export default {
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
+  align-items: center;
   min-height: 650px;
   padding: 32px 0;
   gap: 40px;
@@ -130,6 +124,8 @@ export default {
 @media (min-width: 768px) {
   .intro-content {
     flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
   }
 }
 
@@ -138,7 +134,6 @@ export default {
   flex: 1;
   color: white;
   text-align: center;
-  margin-top: 0;
 }
 @media (min-width: 768px) {
   .intro-text {
@@ -153,15 +148,10 @@ export default {
 }
 @media (min-width: 640px) {
   .intro-text h1 {
-    font-size: 38px;
+    font-size: 42px;
   }
 }
 @media (min-width: 1024px) {
-  .intro-text h1 {
-    font-size: 52px;
-  }
-}
-@media (min-width: 1280px) {
   .intro-text h1 {
     font-size: 62px;
   }
@@ -172,20 +162,10 @@ export default {
   color: #e1e1e1;
   line-height: 1.6;
 }
-@media (min-width: 768px) {
-  .intro-text p {
-    font-size: 18px;
-  }
-}
-@media (min-width: 1024px) {
-  .intro-text p {
-    font-size: 20px;
-  }
-}
 
 /* BUTTON */
 .btn-trade {
-  margin-top: 44px;
+  margin-top: 40px;
   padding: 10px 20px;
   background: #7815f9;
   border-radius: 6px;
@@ -200,16 +180,13 @@ export default {
 .btn-trade:hover {
   background: rgba(120, 21, 249, 0.9);
 }
-.btn-trade:focus {
-  outline: 2px solid #7815f9;
-  outline-offset: 2px;
-}
 
 /* PHONE */
 .intro-phone {
   flex: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
 }
 @media (min-width: 768px) {
@@ -217,52 +194,46 @@ export default {
     justify-content: flex-end;
   }
 }
+
 .phone-wrapper {
   position: relative;
-  width: 280px;
+  width: clamp(300px, 42vw, 500px);
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
-@media (min-width: 768px) {
+
+@media (min-width: 1220px) {
   .phone-wrapper {
-    width: 400px;
+    width: clamp(500px, 50vw, 650px); 
   }
 }
-@media (min-width: 1024px) {
-  .phone-wrapper {
-    width: 583px;
-  }
-}
+
+
 .phone-img {
-  position: relative;
-  z-index: 10;
   width: 100%;
   height: auto;
-  object-fit: contain;
   display: block;
+  object-fit: contain;
+  object-position: center;
 }
+
 .phone-gradient {
   position: absolute;
   inset: 0;
-  z-index: 20;
   pointer-events: none;
 }
 
-/* UTILITY */
-.break {
-  display: block;
-}
-.hidden-sm {
-  display: none;
-}
-@media (min-width: 640px) {
-  .hidden-sm {
-    display: inline;
-  }
-}
-
 /* RESPONSIVE FIXES */
-@media (max-width: 480px) {
-  .intro-text h1 {
-    font-size: 26px;
+@media (max-width: 640px) {
+  .intro-section {
+    min-height: 100vh;
+  }
+  .intro-content {
+    gap: 24px;
+    padding: 24px 0;
   }
   .intro-text p {
     font-size: 14px;
@@ -270,26 +241,6 @@ export default {
   .btn-trade {
     font-size: 14px;
     padding: 8px 16px;
-  }
-  .intro-content {
-    gap: 24px;
-    padding: 24px 0;
-  }
-  .phone-wrapper {
-    width: 220px;
-  }
-}
-
-/* LARGE SCREEN BALANCE */
-@media (min-width: 1440px) {
-  .intro-container {
-    max-width: 1320px;
-  }
-  .intro-text h1 {
-    font-size: 70px;
-  }
-  .intro-text p {
-    font-size: 22px;
   }
 }
 </style>
